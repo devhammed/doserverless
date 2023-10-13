@@ -26,7 +26,7 @@ function main(array $args): array
 
 			<h1>
 				Asake of life! My heart was iron and you were the one with a magnet.<br/>
-				So how could I resist falling for you! I love you, pumpkin pie  💕😘!
+				So how could I resist falling for you! I love you, pumpkin pie 💕😘!
 			</h1>
 			
 			<script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
