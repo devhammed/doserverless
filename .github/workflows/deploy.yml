@@ -9,6 +9,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Cache deploys
+        uses: actions/cache@v2
+        with:
+          path: .deployed
+          key: ${{ runner.os }}-deployed-${{ hashFiles('**/versions.json') }}
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
