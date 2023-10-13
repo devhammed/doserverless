@@ -1,0 +1,21 @@
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      - name: Install the serverless platform
+        run: doctl serverless install
+      - name: Connect to the serverless platform
+        run: doctl serverless connect ${{ secrets.DIGITALOCEAN_SERVERLESS_NS }}
+      - name: Deploy the app
+        run: doctl serverless deploy "$PWD"
