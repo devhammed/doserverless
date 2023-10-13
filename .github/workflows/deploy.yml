@@ -13,7 +13,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .deployed
-          key: ${{ runner.os }}-deployed-${{ hashFiles('**/versions.json') }}
+          key: ${{ runner.os }}-deployed
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
